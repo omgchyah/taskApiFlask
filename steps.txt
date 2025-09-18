@@ -1,0 +1,36 @@
+#Create requirements file with 'ni requirements.txt -Type File'
+
+Requirements:
+flask==3.0.3
+flask-smorest==0.44.0
+flask-sqlalchemy==3.1.1
+flask-migrate==4.0.7
+marshmallow==3.21.3
+python-dotenv==1.0.1
+
+flask-smorest gives OpenAPI 3 + Swagger UI at /docs.
+
+SQLAlchemy for models, Migrate for migrations, Marshmallow for validation.
+
+#Install requirements:
+pip install -r requirements.txt
+
+# go to your project root
+cd path\to\TaskAPI
+
+# init repo
+git init
+
+# (optional) set your identity if you haven’t before on this machine
+git config user.name  "Rossana"
+git config user.email "you@example.com"
+
+# set default branch to main
+git branch -M main
+
+#create repositoty on github.com
+
+#git remote add origin https://github.com/omgchyah/taskApiFlask.git
+
+# create file
+ni .gitignore -Type File
