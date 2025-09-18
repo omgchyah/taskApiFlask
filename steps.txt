@@ -34,3 +34,5 @@ git branch -M main
 
 # create file
 ni .gitignore -Type File
+
+Flask doesn’t auto-scaffold like Laravel/Django because it’s micro by design. That’s a plus: you choose the structure.
