@@ -36,3 +36,32 @@ git branch -M main
 ni .gitignore -Type File
 
 Flask doesn’t auto-scaffold like Laravel/Django because it’s micro by design. That’s a plus: you choose the structure.
+
+$files = @("app.py","config.py","db.py","models.py","schemas.py","resources\tasks.py")
+$files | ForEach-Object { New-Item -ItemType File -Path $_ -Force | Out-Null }
+
+#app.py should have:
+app = create_app()
+
+if __name__ == "__main__":
+    app.run()
+
+
+$env:FLASK_APP = "app.py"
+$env:FLASK_CONFIG = "dev"
+Why:
+
+FLASK_APP tells flask CLI which app to run.
+
+FLASK_CONFIG chooses the configuration from config.py (we use dev).
+
+#First install Flask-Migrate if you forgot:
+
+pip install flask-migrate
+
+flask db init
+
+flask db migrate -m "create tasks table"
+
+flask db upgrade
+
